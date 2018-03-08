@@ -145,42 +145,7 @@ func maps() {
 	fmt.Println(x["10"])
 }
 
-func strongPassword(password string) int {
-	result := 0
-	numbers := "0123456789"
-	lower_case := "abcdefghijklmnopqrstuvwxyz"
-	upper_case := "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-	special_characters := "!@#$%^&*()-+"
-
-	if !strings.ContainsAny(password, numbers) {
-		result += 1
-	}
-
-	if !strings.ContainsAny(password, lower_case) {
-		result += 1
-	}
-
-	if !strings.ContainsAny(password, upper_case) {
-		result += 1
-	}
-
-	if !strings.ContainsAny(password, special_characters) {
-		result += 1
-	}
-	if len(password) < 6 {
-		if (result + len(password)) < 6 {
-			result = (6 - len(password))
-		}
-	}
-	return result
-}
 func main() {
-	reader := bufio.NewReader(os.Stdin)
-	reader.ReadString('\n')
-	text, _ := reader.ReadString('\n')
-	text = strings.TrimSpace(text)
-	result := strongPassword(text)
-	fmt.Println(result)
 	// maps()
 	// basic()
 	// types()
